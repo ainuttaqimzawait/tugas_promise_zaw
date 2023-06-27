@@ -20,7 +20,8 @@ function myFunction() {
 
 fetch('https://newsapi.org/v2/everything?q=apple&from=2023-06-26&to=2023-06-26&sortBy=popularity&apiKey=468dc73a648c440292da56bf25aceb95')
   .then(response => response.json())
-  .then(result => {console.log(result);
+  .then(result => {
+    console.log(result);
     const articles = result.articles;
     let cards = '';
     articles.forEach(m => {
@@ -36,8 +37,7 @@ fetch('https://newsapi.org/v2/everything?q=apple&from=2023-06-26&to=2023-06-26&s
       </div>`
     });
     document.getElementById('berita-container').innerHTML = cards;
-  }) 
+  })
   .finally(() => {
     document.querySelector('.loading').innerHTML = "";
   })
-  
